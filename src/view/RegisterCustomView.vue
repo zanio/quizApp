@@ -16,7 +16,7 @@
           class="appearance-none border-width box-border border-primary w-full
       rounded w-full py-2 px-3 text-gray-700 leading-tight
       focus:outline-none focus:shadow-outline"
-          type="number" name="phone" placeholder="+234 81 77034 541"
+          type="number" name="phone" placeholder="0 81 77034 541"
       />
     </div>
 
