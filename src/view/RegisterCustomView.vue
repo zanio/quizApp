@@ -9,14 +9,21 @@
       <div class="select w-full md:w-2/4 my-5 md:my-0">
         <select @change="selectCountry" name="format" id="format" class="text-white text-base border px-2.5 py-1.5 w-full">
           <option selected disabled>country</option>
-          <option :key="value.country" :value="value.country" v-for="value in countries">{{ value.country }}</option>
+          <option :key="value.country"  v-for="value in countries">{{ value.country }}</option>
         </select>
       </div>
-      <QInput class="w-full"  type="number" name="phone" placeholder="+234 81 77034 541" :errors="[]"/>
-      <p v-if="errorText.length > 0" class="text-fancy cursor-pointer text-base font-normal tracking-wider" > {{ errorText }}</p>
+      <input v-model="phone"
+          class="appearance-none border-width box-border border-primary w-full
+      rounded w-full py-2 px-3 text-gray-700 leading-tight
+      focus:outline-none focus:shadow-outline"
+          type="number" name="phone" placeholder="+234 81 77034 541"
+      />
     </div>
 
     </div>
+    <p v-if="errorText.length > 0" class="text-fancy text-center
+    text-base font-normal tracking-wider pb-4 md:pb-8" > {{ errorText }}</p>
+
     <div class="flex items-center justify-center pb-8">
       <QButton @click="nextPage" class="h-12 " text="Register"></QButton>
 
@@ -29,7 +36,6 @@
 <script>
 import QButton from "../components/button/QButton";
 import QLayout from "../components/QLayout";
-import QInput from "../components/input/QInput";
 
 export default {
   name: "RegisterCustomView",
@@ -46,7 +52,7 @@ export default {
     this.fetchCountry();
   },
   components: {
-    QButton,QLayout,QInput,
+    QButton,QLayout,
     },
   methods:{
     getData(){
@@ -59,7 +65,10 @@ export default {
       if(this.phone.toString().length > 10){
         this.$router.push({name: "Quiz"});
       } else{
-        this.errorText = "Phone Number must be greater than 11"
+        this.errorText = "Phone Number must be greater than 10 digits"
+        setTimeout(()=>{
+          this.errorText = "";
+        }, 3000);
       }
     },
     selectCountry(evt){
