@@ -18,13 +18,13 @@
       <div class="flex  flex-col justify-start" v-for="(value, key) in currentQuestion.choices" :key="key">
         <div class="flex items-center  w-full md:w-1/3 py-1">
           <div :class="['font-bold text-white circle p-4 ' +
-           'bg-blue flex items-center justify-center font-mono m-2 cursor-pointer',value['is_correct_choice']&&userClicked && isEventAnswer('bg'),
+           'bg-blue flex items-center justify-center font-mono m-2 cursor-pointer',value['is_correct_choice']&&userClicked && 'bg-green',
            ]" @click="getUserAnswer"
                :data-idx="value['is_correct_choice']">{{ key===0 ? 'A':key===1?'B':'C' }}</div>
           <p :data-idx="value['is_correct_choice']"
              @click="getUserAnswer"
              :class="['text-black cursor-pointer text-base font-normal tracking-wider',
-             value['is_correct_choice']&&userClicked && isEventAnswer('text'),
+             value['is_correct_choice']&&userClicked && 'text-green',
 
              ]">{{ value['choice'] }}</p>
         </div>
