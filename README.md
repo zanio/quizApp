@@ -22,7 +22,12 @@ npm run build
 npm run lint
 ```
 
-###
+### Deploy the application on Heroku 
+ - To deploy the application clone this repository
+-  Create an app on heroku or
+-  run ` heroku git:remote -a quiz-ani` from your terminal
+-   and finally  run:
+-  `git push heroku`
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
