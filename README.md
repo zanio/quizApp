@@ -39,11 +39,11 @@ The major tech stack used include:
 ### What will you do differently to make the application scalable?
 - Add Vuex to manage the state 
 - increase the number of Questions
-- create a components and make them re-usable
+- create components and make them re-usable
 
 ### In a different environment or if you were given more time, what will you do differently?
 
-- fetch questions from an endpoint of questions bank
+- fetch questions from an endpoint of questions
 - record participants data and use it for analytics to future participants.  informations such as 
   number of participants that has taken the quiz today would be displayed on the home page
 - ability for participants to leave a feedback
